@@ -1,0 +1,291 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 2;
+  color: #fff;
+  padding: 0 200px;
+  box-sizing: border-box;
+  /* background: #152536;  */
+  background: rgba(21, 37, 54, 0.5)
+}
+
+.nav-inp img {
+  margin-right: 10px;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.right-nav {
+  position: fixed;
+  right: -42vw;
+  top: 0;
+  height: 100vh;
+  width: 42vw;
+  background: #152536;
+  z-index: 9;
+  transition: all 1.5s;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 20%;
+  cursor: pointer;
+}
+
+.nav-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.nav-line {
+  width: 400px;
+  height: 2px;
+  background-image: radial-gradient(50% 100%, #FFFFFF 0%, rgba(0, 0, 0, 0.00) 100%);
+}
+
+.nav-list>li {
+  width: 220px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: #FFFFFF;
+  margin: 15px 0;
+}
+
+.nav-item {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.nav-item>li {
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.nav-list>li:hover .nav-itemone {
+  height: 120px;
+}
+
+.nav-list>li:hover .nav-itemtwo {
+  height: 220px;
+}
+
+/* 底部栏 */
+
+.footer {
+  background: #152536;
+  padding: 87px 0 35px;
+  color: #fff;
+}
+
+.footer-title {
+  font-size: 30px;
+}
+
+.footer-name {
+  font-size: 20px;
+}
+
+.footer-item>p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.footer-footer {
+  text-align: center;
+  font-size: 14px;
+
+}
+/* 首页 */
+
+.h-title {
+  font-size: 40px;
+  position: relative;
+}
+
+.h-line {
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  width: 2px;
+  height: 300px;
+  background: #59C2FA;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/home/banner.png) no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  position: relative;
+}
+
+.logo {
+  left: 0;
+  right: 0;
+  top: 140px;
+  position: absolute;
+  margin: 0 auto;
+  max-width: 213px;
+}
+
+.welcome>div {
+  width: 50%;
+}
+
+.welcome-left>p {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.welcome-left>p img {
+  margin-right: 40px;
+}
+
+.hotel>div {
+  width: 45%;
+}
+
+.hotel>div.hotel-img {
+  height: 500px;
+  background: #F2F2F2;
+  position: relative;
+}
+
+.hotel-img-item {
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+}
+
+.hotel-img-item>img {
+  margin-right: 40px;
+}
+
+.hotel-item {
+  width: 70%;
+  margin-left: 10%;
+}
+
+.hotel-btn {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #59C2FA;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #59C2FA;
+}
+
+.meeting {
+  width: 80%;
+}
+
+.meeting-btn {
+  width: 20%;
+}
+
+.meet-btn {
+  margin: 0 auto;
+  background: #59C2FA;
+  color: #fff;
+}
+
+.room>div:nth-child(1) {
+  width: 60%;
+}
+
+.room>div:nth-child(2) {
+  width: 40%;
+}
+
+.room-left img {
+  width: 46.5%;
+  vertical-align: bottom;
+}
+
+.room-left img:nth-child(1) {
+  margin-right: 5%;
+}
+
+.room-right {
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.room-right img {
+  vertical-align: bottom;
+}
+
+.vertical {
+  position: relative;
+}
+
+.vertical-line {
+  position: absolute;
+  color: #59C2FA;
+  font-size: 18px;
+  right: -50%;
+  bottom: 35%;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-90deg);
+  /* Opera */
+  -moz-transform: rotate(-90deg);
+}
+
+.vertical-line>p {
+  width: 250px;
+  height: 2px;
+  background: #59C2FA;
+  margin-right: 20px;
+}
+
+.food>div:nth-child(1) {
+  width: 45%;
+}
+
+.food>div:nth-child(2) {
+  width: 55%;
+}
+
+.foot-left {
+  position: relative;
+}
+
+.foot-item {
+  width: 250px;
+  height: 400px;
+}
+
+.foot-left>div.foot-item-active {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 350px;
+  height: 500px;
+}
