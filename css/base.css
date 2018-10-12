@@ -126,3 +126,16 @@ img {
 .he100 {
   height: 100px;
 }
+
+.col-1{
+  color: #fff;
+}
+.col-2{
+  color: #4A4A4A;
+}
+.col-3{
+  color: #59C2FA;
+}
+.back-1{
+  background: #59C2FA;
+}
