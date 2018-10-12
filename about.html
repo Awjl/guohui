@@ -9,7 +9,11 @@
 	<link rel="stylesheet" href="css/media.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<script src="js/wow.js"></script>
+	<script src="js/my_scrollbar.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eOZtxesMWUnuHMvNrKq4Ti5rG9CVlVwM"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
 	<style>
 		.banner {
 			background: url(images/about/bg.png) no-repeat;
@@ -66,7 +70,101 @@
 		</div>
 	</div>
 	<div class="he100"></div>
+	<div class="history dis-flex">
+		<div class="history-img">
+			<img src="images/about/history.png" alt="">
+		</div>
+		<div class="history-list">
+			<div class="h-title">历史瞬间</div>
+			<div class="he20"></div>
+			<div class='historybox historybox1' id='wrapper1'>
+				<div class="scroll" id="scrollOne">
+					<div class="scroll-item">
+						<div class="scroll-time">2011年</div>
+						<div>2011上海佳能博览会</div>
+					</div>
+					<div class="scroll-item">
+						<div class="scroll-time">2012年</div>
+						<div>中日韩三国文化部长会议 </div>
+						<div>第三届国际职业技术教育大会 </div>
+					</div>
+					<div class="scroll-item">
+						<div class="scroll-time">2013年</div>
+						<div>国际大会及会议协会（ICCA）第52届全球年会</div>
+					</div>
+					<div class="scroll-item">
+						<div class="scroll-time">2014年</div>
+						<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
+						<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
+					</div>
+					<div class="scroll-item">
+						<div class="scroll-time">2015年</div>
+						<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
+						<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="he100"></div>
+	<div class="center">
+		<div class="meeting-facilities">
+			<div class="h-title" style="text-align: center;">娱乐设施</div>
+			<div class="he40"></div>
+			<ul class="facilities-item dis-flex jus-between flex-wrap">
+				<li>
+					<img src="images/about/icon-1.png" alt="">
+					<p>桑拿按摩</p>
+				</li>
+				<li>
+					<img src="images/about/icon-2.png" alt="">
+					<p>健身游泳</p>
+				</li>
+				<li>
+					<img src="images/about/icon-3.png" alt="">
+					<p>美容美发</p>
+				</li>
+				<li>
+					<img src="images/about/icon-4.png" alt="">
+					<p>室外网球</p>
+				</li>
+				<li>
+					<img src="images/about/icon-5.png" alt="">
+					<p>汽车租赁</p>
+				</li>
+				<li>
+					<img src="images/about/icon-6.png" alt="">
+					<p>商场代购</p>
+				</li>
+			</ul>
+		</div>
+		<div class="about-facilities">
+			<div class="h-title" style="text-align: center;">周边设施</div>
+			<div class="he40"></div>
+			<div>
+				上海国际会议中心素以举办大型国际会议、商务论坛而蜚声海内外。位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，30个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备，无与伦比的会议场馆与专业化的会务服务都将展示您每次跨越成功的风采。
+			</div>
+		</div>
+		<div class="he40"></div>
+		<div class="about-list dis-flex jus-between">
+			<div class="aboutItem">
+				<img src="images/about/item1.png" alt="">
+			</div>
+			<div class="aboutItem">
+				<img src="images/about/item2.png" alt="">
+			</div>
+			<div class="aboutItem">
+				<img src="images/about/item3.png" alt="">
+			</div>
+			<div class="aboutItem">
+				<img src="images/about/item4.png" alt="">
+			</div>
+		</div>
+		<div class="he100"></div>
+	</div>
+	<div id="allmap" style="width: 100%;height:500px;">
 
+	</div>
 	<div class="footer">
 		<div class="center">
 			<div class="footer-title">上海国际会议中心欢迎您</div>
@@ -112,6 +210,14 @@
 <script type="text/javascript">
 	$(function () {
 		new WOW().init();
+		var oMyBar1 = new MyScrollBar({
+			selId: 'wrapper1',
+			bgColor: 'rgba(50, 50, 50, 0.2)',
+			barColor: '#59C2FA',
+			enterColor: '#056FD8',
+			enterShow: false,
+			borderRadius: 10,
+		});
 		$('.nav-link').click(function () {
 			$('.right-nav').css('right', '0')
 		})
@@ -119,6 +225,44 @@
 			$('.right-nav').css('right', '-42vw')
 		})
 	});
+</script>
+<script>
+	var map = new BMap.Map("allmap");          // 创建地图实例  
+	var point = new BMap.Point(121.503829,31.245804);  // 创建点坐标  
+	map.centerAndZoom(point, 18);                 // 初始化地图，设置中心点坐标和地图级别
+	map.addControl(new BMap.NavigationControl());
+	map.addControl(new BMap.ScaleControl());
+	map.addControl(new BMap.OverviewMapControl());
+	map.addControl(new BMap.MapTypeControl());
+	map.enableKeyboard();
+	// map.enableScrollWheelZoo
+	map.setCurrentCity("上海");
+
+
+	var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+		'<img src="images/about/logobg.jpg" alt="" style="zoom:1;float:right;overflow:hidden;height:100px;margin-left:3px;"/>' +
+		'地址：滨江大道2727号<br/>电话：(021)50370000<br/>简介：上海国际会议中心总建筑面积达11万平方米，拥有现代化的会议场馆：有4300平方米的多功能厅和3600平方米的新闻中心各1个，可容纳50-800人的会议厅三十余个；豪华宾馆客房，有总统套房、商务套房、标准间近270套；还有高级餐饮设施、舒适的休闲场所和600余个车位。' +
+		'</div>';
+
+	//创建检索信息窗口对象
+	var searchInfoWindow = null;
+	searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+		title: "上海国际会议中心",      //标题
+		width: 290,             //宽度
+		height: 200,              //高度
+		panel: "panel",         //检索结果面板
+		enableAutoPan: true,     //自动平移
+		searchTypes: [
+			BMAPLIB_TAB_SEARCH,   //周边检索
+			BMAPLIB_TAB_TO_HERE,  //到这里去
+			BMAPLIB_TAB_FROM_HERE //从这里出发
+		]
+	});
+	var marker = new BMap.Marker(new BMap.Point(121.503475,31.245151));
+	map.addOverlay(marker);
+	window.onload = function () {
+		searchInfoWindow.open(marker);
+	}
 </script>
 
 </html>
