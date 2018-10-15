@@ -485,6 +485,7 @@
   width: 33%;
   padding: 20px 20px 40px;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 .otherItem:hover{
   box-shadow: 0 0 6px 6px rgba(240,240,240,0.50);
