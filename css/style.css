@@ -477,3 +477,19 @@
   max-width: 800px;
   margin: 0 auto;
 }
+/* 楼层详情 */
+.meetingdetails-title .meetingdetails-left{
+  width: 550px;
+}
+.otherItem{
+  width: 33%;
+  padding: 20px 20px 40px;
+  box-sizing: border-box;
+}
+.otherItem:hover{
+  box-shadow: 0 0 6px 6px rgba(240,240,240,0.50);
+}
+.otherItem-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
