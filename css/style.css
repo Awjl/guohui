@@ -487,10 +487,20 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+.otherItem>a{
+  color: #4a4a4a;
+}
 .otherItem:hover{
   box-shadow: 0 0 6px 6px rgba(240,240,240,0.50);
 }
 .otherItem-name {
   font-size: 28px;
   margin-bottom: 10px;
+}
+/* 大厅 */
+.hallText{
+  width: 70%;
+}
+.hall-btn{
+  width: 30%;
 }
