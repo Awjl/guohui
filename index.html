@@ -116,7 +116,7 @@
 			<img src="images/home/rom1.png" alt="" class="wow fadeInDown" data-wow-delay="0s" data-wow-offset='150'>
 			<img src="images/home/rom2.png" alt="" class="wow fadeInDown" data-wow-delay="0.4s" data-wow-offset='150'>
 		</div>
-		<div class="room-right vertical wow fadeInRight"  data-wow-delay="0.8s" data-wow-offset='150'>
+		<div class="room-right vertical wow fadeInRight" data-wow-delay="0.8s" data-wow-offset='150'>
 			<p>内设五星级的，拥有273间现代化的高级客房及各类豪华套房，平均面积从36平方米到440平方米，或正对外滩万国博览群的迤逦风景，或朝向陆家嘴现代风姿，现代与古典，浪漫与简洁的完美融合，造就了上海最美的景致，令人陶醉。</p>
 			<div class="he50"></div>
 			<div class="hotel-btn">了解更多</div>
@@ -131,7 +131,7 @@
 	<div class="he100"></div>
 	<div class="he100"></div>
 	<div class="center food dis-flex">
-		<div class="room-right vertical wow fadeInLeft"  data-wow-delay="0.8s" data-wow-offset='150'>
+		<div class="room-right vertical wow fadeInLeft" data-wow-delay="0.8s" data-wow-offset='150'>
 			<div class="h-title">美食天地</div>
 			<div class="he40"></div>
 			<p>上海国际会议中心酒店面水临江的球体建筑内设有风格各异的餐厅，大小型宴会厅和酒吧，在您享用各式风味的中西佳肴的同时，也为您呈现一卷璀璨的滨江风景画。位于7楼的上海厅可承接3000人大型宴会及表演，恢弘场面，令人叹为观止。</p>
@@ -143,7 +143,7 @@
 				<p></p>Gastronomy
 			</div>
 		</div>
-		<div class="foot-left dis-flex jus-between  wow fadeInRight"  data-wow-delay="0.8s" data-wow-offset='150'>
+		<div class="foot-left dis-flex jus-between  wow fadeInRight" data-wow-delay="0.8s" data-wow-offset='150'>
 			<div class="foot-item">
 				<img src="images/home/foot2.png" alt="">
 			</div>
@@ -199,6 +199,62 @@
 			<p class="footer-footer">© 2018 上海国际会议中心 | 东方滨江大酒店. All Rights Reserved 沪ICP备06019427号-1 沪公网安备31011502003373号</p>
 		</div>
 	</div>
+	<div class="form-box  jus-contenr items-center">
+		<div class="fromBox">
+			<div class="he80"></div>
+			<div class="fromBox-title">上海国际会议中心欢迎您！</div>
+			<div class="he40"></div>
+			<div class="inp dis-flex jus-between">
+				<div>
+					<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+			</div>
+			<div class="inp dis-flex jus-between">
+				<div>
+					<label for="">联系电话：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="">电子邮箱：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+			</div>
+			<div class="inp dis-flex jus-between">
+				<div>
+					<label for="">会议时间：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="">会议人数：</label>
+					<input type="text">
+					<span>*</span>
+				</div>
+			</div>
+			<div class="tex dis-flex">
+				<label for="">需求备注：&nbsp;</label>
+				<textarea name="" id=""></textarea>
+			</div>
+			<div class="he50"></div>
+			<div class="box-btn dis-flex jus-end">
+				<div class="box-btnOpen">提交表单</div>
+				<div class="box-btnClose">取消</div>
+			</div>
+			<div class="box-img">
+				<img src="images/base/logo.png" alt="">
+			</div>
+			<div class="he20"></div>
+		</div>
+	</div>
 </body>
 <script type="text/javascript">
 	$(function () {
@@ -208,6 +264,12 @@
 		})
 		$('.close').click(function () {
 			$('.right-nav').css('right', '-42vw')
+		})
+		$('.footer-btn').click(function () {
+			$('.form-box').addClass('dis-flex')
+		})
+		$('.box-btnClose').click(function () {
+			$('.form-box').removeClass('dis-flex')
 		})
 	});
 </script>
