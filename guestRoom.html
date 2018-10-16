@@ -207,6 +207,62 @@
 			<p class="footer-footer">© 2018 上海国际会议中心 | 东方滨江大酒店. All Rights Reserved 沪ICP备06019427号-1 沪公网安备31011502003373号</p>
 		</div>
 	</div>
+	<div class="form-box  jus-contenr items-center">
+			<div class="fromBox">
+				<div class="he80"></div>
+				<div class="fromBox-title">上海国际会议中心欢迎您！</div>
+				<div class="he40"></div>
+				<div class="inp dis-flex jus-between">
+					<div>
+						<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+					<div>
+						<label for="">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+				</div>
+				<div class="inp dis-flex jus-between">
+					<div>
+						<label for="">联系电话：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+					<div>
+						<label for="">电子邮箱：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+				</div>
+				<div class="inp dis-flex jus-between">
+					<div>
+						<label for="">会议时间：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+					<div>
+						<label for="">会议人数：</label>
+						<input type="text">
+						<span>*</span>
+					</div>
+				</div>
+				<div class="tex dis-flex">
+					<label for="">需求备注：&nbsp;</label>
+					<textarea name="" id=""></textarea>
+				</div>
+				<div class="he50"></div>
+				<div class="box-btn dis-flex jus-end">
+					<div class="box-btnOpen">提交表单</div>
+					<div class="box-btnClose">取消</div>
+				</div>
+				<div class="box-img">
+					<img src="images/base/logo.png" alt="">
+				</div>
+				<div class="he20"></div>
+			</div>
+		</div>
 </body>
 <script type="text/javascript">
 	$(function () {
@@ -216,6 +272,12 @@
 		})
 		$('.close').click(function () {
 			$('.right-nav').css('right', '-42vw')
+		})
+		$('.footer-btn').click(function () {
+			$('.form-box').addClass('dis-flex')
+		})
+		$('.box-btnClose').click(function () {
+			$('.form-box').removeClass('dis-flex')
 		})
 	});
 </script>
