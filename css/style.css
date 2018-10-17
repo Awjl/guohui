@@ -409,6 +409,7 @@
   height: 25px;
   line-height: 25px;
   margin-right: 80px;
+  cursor: pointer;
 }
 
 .foot-nav>span.foot-active {
