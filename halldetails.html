@@ -143,7 +143,7 @@
             <div class="he10"></div>
             <p>为了您更好的体验，</p>
             <p>请提前预约</p>
-            <p class="footer-btn">立即预约</p>
+            <p class="footer-btn" @click="clear()">立即预约</p>
           </div>
         </div>
         <div class="he40"></div>
@@ -153,52 +153,56 @@
     <div class="form-box  jus-contenr items-center">
       <div class="fromBox">
         <div class="he80"></div>
-        <div class="fromBox-title">上海国际会议中心欢迎您！</div>
+        <div class="fromBox-title" v-if='show'>上海国际会议中心欢迎您！</div>
         <div class="he40"></div>
-        <div class="inp dis-flex jus-between">
+        <div class="inp dis-flex jus-between" v-if='show'>
           <div>
             <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
-            <input type="text">
+            <input type="text" v-model="list.name" placeholder="请输入姓名">
             <span>*</span>
           </div>
-          <div>
-            <label for="">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
-            <input type="text">
-            <span>*</span>
-          </div>
-        </div>
-        <div class="inp dis-flex jus-between">
           <div>
             <label for="">联系电话：</label>
-            <input type="text">
+            <input type="text" v-model="list.phone" placeholder="请输入联系电话">
             <span>*</span>
           </div>
+        </div>
+        <div class="inp dis-flex jus-between" v-if='show'>
           <div>
             <label for="">电子邮箱：</label>
-            <input type="text">
-            <span>*</span>
+            <input type="text" v-model="list.email" placeholder="请输入电子邮箱" @blur="upperEmli()">
+            <span>{{emailERR}}</span>
           </div>
-        </div>
-        <div class="inp dis-flex jus-between">
           <div>
             <label for="">会议时间：</label>
-            <input type="text">
-            <span>*</span>
-          </div>
-          <div>
-            <label for="">会议人数：</label>
-            <input type="text">
+            <input type="text" v-model="list.meetingTime" placeholder="格式如：2018-01-01">
             <span>*</span>
           </div>
         </div>
-        <div class="tex dis-flex">
+        <div class="inp dis-flex jus-between" v-if='show'>
+          <div>
+            <label for="">会议人数：</label>
+            <input type="text" v-model="list.number" placeholder="请输入会议人数">
+            <span>*</span>
+          </div>
+        </div>
+        <div class="tex dis-flex" v-if='show'>
           <label for="">需求备注：&nbsp;</label>
-          <textarea name="" id=""></textarea>
+          <textarea name="" id="" v-model="list.note" placeholder="需求备注"></textarea>
+        </div>
+        <div style="text-align: center" v-if='!show'>
+          <img src="images/base/over.png" alt="">
+          <div class="he30"></div>
+          <p class="col-3">预约信息已成功提交，<br>
+            我们会在24小时内与您联系</p>
+          <div class="he30"></div>
+
+          <p>如有问题请拨打电话 ：<i class="col-3"> (86 21) 5037 0000</i></p>
         </div>
         <div class="he50"></div>
         <div class="box-btn dis-flex jus-end">
-          <div class="box-btnOpen">提交表单</div>
-          <div class="box-btnClose">取消</div>
+          <div class="box-btnOpen" @click='getData()' v-if='show'>提交表单</div>
+          <div class="box-btnClose" @click='getShow()'>取消</div>
         </div>
         <div class="box-img">
           <img src="images/base/logo.png" alt="">
@@ -240,13 +244,23 @@
         },
         otherMeetingRooms: []
       },
-      num: window.location.href.charAt(window.location.href.length - 1)
+      num: window.location.href.charAt(window.location.href.length - 1),
+      list: {
+        email: "",
+        meetingTime: "",
+        name: "",
+        note: "",
+        number: "",
+        phone: ""
+      },
+      emailERR: '*',
+      show: true
     },
     created: function () {
-      this.getData()
+      this.Data()
     },
     methods: {
-      getData() {
+      Data() {
         var vm = this
         $.ajax({
           type: "get", //提交方式 
@@ -262,6 +276,46 @@
       getGoodsHref(val) {
         console.log(val)
         return 'http://127.0.0.1:5500/halldetails.html?id=' + val + '&number=' + this.num
+      },
+      getShow() {
+        this.show = true
+      },
+      clear() {
+        this.list = {
+          email: "",
+          meetingTime: "",
+          name: "",
+          note: "",
+          number: "",
+          phone: ""
+        }
+      },
+      getData() {
+        var vm = this
+        if (this.list.email != "" && this.list.meetingTime != '' && this.list.name != '' && this.list.number != '' && this.list.phone != '' && this.emailERR == '*') {
+          console.log('123')
+          $.ajax({
+            type: "post", //提交方式 
+            url: "http://10.1.50.137/book/toBook",//路径
+            data: JSON.stringify(vm.list),
+            dataType: 'json',
+            contentType: "application/json;charset=utf-8",
+            success: function (res) {//返回数据根据结果进行相应的处理 
+              if (res.code === 0) {
+                console.log(vm.data)
+                vm.show = false
+              }
+            }
+          });
+        }
+      },
+      upperEmli() {
+        var emli = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+        if (!emli.test(this.list.email)) {
+          this.emailERR = '格式不正确'
+        } else {
+          this.emailERR = '*'
+        }
       }
     }
   })

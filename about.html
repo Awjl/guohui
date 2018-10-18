@@ -11,6 +11,8 @@
 	<script src="js/wow.js"></script>
 	<script src="js/my_scrollbar.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/vue.min.js"></script>
+
 	<script type="text/javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eOZtxesMWUnuHMvNrKq4Ti5rG9CVlVwM"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
@@ -24,162 +26,163 @@
 </head>
 
 <body>
-	<div class="nav dis-flex jus-between items-center">
-		<div class="nav-inp"><img src="images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
-		<div class="nav-link"><img src="images/home/nav.png" alt=""></div>
-	</div>
-	<div class="right-nav dis-flex flex-direction jus-contenr items-center">
-		<div class="close">
-			<img src="images/home/close.png" alt="">
+	<div id='app'>
+		<div class="nav dis-flex jus-between items-center">
+			<div class="nav-inp"><img src="images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
+			<div class="nav-link"><img src="images/home/nav.png" alt=""></div>
 		</div>
-		<img src="images/home/logo.png" alt="">
-		<div class="he40"></div>
-		<div class="nav-line"></div>
-		<div class="he50"></div>
-		<ul class="nav-list">
-			<li><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-			<li><a href="meeting.html">会议会展</a>
-				<ul class=" nav-item nav-itemone">
-					<li><a href="meetingdetails.html?type=1">1楼会议室</a></li>
-					<li><a href="meetingdetails.html?type=3">3楼会议室</a></li>
-					<li><a href="meetingdetails.html?type=5">5楼会议室</a></li>
-					<li><a href="meetingdetails.html?type=7">7楼会议室</a></li>
-				</ul>
-			</li>
-			<li><a href="guestRoom.html">客房信息</a>
-				<ul class="nav-item nav-itemtwo">
-					<li><a href="roomdetails.html?key=1">高级园景房</a></li>
-					<li><a href="roomdetails.html?key=2">高级江景房</a></li>
-					<li><a href="roomdetails.html?key=3">豪华江景房</a></li>
-					<li><a href="roomdetails.html?key=4">行政江景房</a></li>
-					<li><a href="roomdetails.html?key=5">商务江景房</a></li>
-					<li><a href="roomdetails.html?key=6">行政贵宾/商务套房</a></li>
-					<li><a href="roomdetails.html?key=7">总统套房</a></li>
-				</ul>
-			</li>
-			<li><a href="foot.html">美食天地</a></li>
-			<li><a href="about.html">关于我们</a></li>
-		</ul>
-		<div class="nav-footer">
-			沪ICP备06019427号-1 沪公网安备31011502003373号
-		</div>
-	</div>
-	<div class="banner">
-		<div class="logo">
+		<div class="right-nav dis-flex flex-direction jus-contenr items-center">
+			<div class="close">
+				<img src="images/home/close.png" alt="">
+			</div>
 			<img src="images/home/logo.png" alt="">
-		</div>
-	</div>
-	<div class="he100"></div>
-	<div class="history dis-flex">
-		<div class="history-img wow fadeInLeft">
-			<img src="images/about/history.png" alt="">
-		</div>
-		<div class="history-list wow fadeInRight">
-			<div class="h-title">历史瞬间</div>
-			<div class="he20"></div>
-			<div class='historybox historybox1' id='wrapper1'>
-				<div class="scroll" id="scrollOne">
-					<div class="scroll-item">
-						<div class="scroll-time">2011年</div>
-						<div>2011上海佳能博览会</div>
-					</div>
-					<div class="scroll-item">
-						<div class="scroll-time">2012年</div>
-						<div>中日韩三国文化部长会议 </div>
-						<div>第三届国际职业技术教育大会 </div>
-					</div>
-					<div class="scroll-item">
-						<div class="scroll-time">2013年</div>
-						<div>国际大会及会议协会（ICCA）第52届全球年会</div>
-					</div>
-					<div class="scroll-item">
-						<div class="scroll-time">2014年</div>
-						<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
-						<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
-					</div>
-					<div class="scroll-item">
-						<div class="scroll-time">2015年</div>
-						<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
-						<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="he100"></div>
-	<div class="center">
-		<div class="meeting-facilities">
-			<div class="h-title wow fadeIn" style="text-align: center;" data-wow-delay="0s" data-wow-offset='150'
-			 data-wow-duration='1s'>娱乐设施</div>
 			<div class="he40"></div>
-			<ul class="facilities-item dis-flex jus-between flex-wrap">
-				<li class="wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
-					<img src="images/about/icon-1.png" alt="">
-					<p>桑拿按摩</p>
+			<div class="nav-line"></div>
+			<div class="he50"></div>
+			<ul class="nav-list">
+				<li><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a href="meeting.html">会议会展</a>
+					<ul class=" nav-item nav-itemone">
+						<li><a href="meetingdetails.html?type=1">1楼会议室</a></li>
+						<li><a href="meetingdetails.html?type=3">3楼会议室</a></li>
+						<li><a href="meetingdetails.html?type=5">5楼会议室</a></li>
+						<li><a href="meetingdetails.html?type=7">7楼会议室</a></li>
+					</ul>
 				</li>
-				<li class="wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
-					<img src="images/about/icon-2.png" alt="">
-					<p>健身游泳</p>
+				<li><a href="guestRoom.html">客房信息</a>
+					<ul class="nav-item nav-itemtwo">
+						<li><a href="roomdetails.html?key=1">高级园景房</a></li>
+						<li><a href="roomdetails.html?key=2">高级江景房</a></li>
+						<li><a href="roomdetails.html?key=3">豪华江景房</a></li>
+						<li><a href="roomdetails.html?key=4">行政江景房</a></li>
+						<li><a href="roomdetails.html?key=5">商务江景房</a></li>
+						<li><a href="roomdetails.html?key=6">行政贵宾/商务套房</a></li>
+						<li><a href="roomdetails.html?key=7">总统套房</a></li>
+					</ul>
 				</li>
-				<li class="wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
-					<img src="images/about/icon-3.png" alt="">
-					<p>美容美发</p>
-				</li>
-				<li class="wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
-					<img src="images/about/icon-4.png" alt="">
-					<p>室外网球</p>
-				</li>
-				<li class="wow fadeInUp" data-wow-delay="0.8s" data-wow-offset='150'>
-					<img src="images/about/icon-5.png" alt="">
-					<p>汽车租赁</p>
-				</li>
-				<li class="wow fadeInUp" data-wow-delay="1s" data-wow-offset='150'>
-					<img src="images/about/icon-6.png" alt="">
-					<p>商场代购</p>
-				</li>
+				<li><a href="foot.html">美食天地</a></li>
+				<li><a href="about.html">关于我们</a></li>
 			</ul>
-		</div>
-		<div class="about-facilities">
-			<div class="h-title wow fadeIn" style="text-align: center;" data-wow-offset='150'>周边设施</div>
-			<div class="he40"></div>
-			<div class="wow fadeInUp" data-wow-offset='150'>
-				上海国际会议中心素以举办大型国际会议、商务论坛而蜚声海内外。位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，30个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备，无与伦比的会议场馆与专业化的会务服务都将展示您每次跨越成功的风采。
+			<div class="nav-footer">
+				沪ICP备06019427号-1 沪公网安备31011502003373号
 			</div>
 		</div>
-		<div class="he40"></div>
-		<div class="about-list dis-flex jus-between">
-			<div class="aboutItem wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
-				<img src="images/about/item1.png" alt="">
-			</div>
-			<div class="aboutItem wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
-				<img src="images/about/item2.png" alt="">
-			</div>
-			<div class="aboutItem wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
-				<img src="images/about/item3.png" alt="">
-			</div>
-			<div class="aboutItem wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
-				<img src="images/about/item4.png" alt="">
+		<div class="banner">
+			<div class="logo">
+				<img src="images/home/logo.png" alt="">
 			</div>
 		</div>
 		<div class="he100"></div>
-	</div>
-	<div id="allmap" style="width: 100%;height:500px;">
-
-	</div>
-	<div class="footer">
-		<div class="center">
-			<div class="footer-title">上海国际会议中心欢迎您</div>
-			<div class="he30"></div>
-			<div class="dis-flex jus-between">
-				<div class="footer-item">
-					<div class="footer-name">导航栏</div>
-					<div class="he10"></div>
-					<p>首页</p>
-					<p>会议会展</p>
-					<p>客房信息</p>
-					<p>美食天地</p>
+		<div class="history dis-flex">
+			<div class="history-img wow fadeInLeft">
+				<img src="images/about/history.png" alt="">
+			</div>
+			<div class="history-list wow fadeInRight">
+				<div class="h-title">历史瞬间</div>
+				<div class="he20"></div>
+				<div class='historybox historybox1' id='wrapper1'>
+					<div class="scroll" id="scrollOne">
+						<div class="scroll-item">
+							<div class="scroll-time">2011年</div>
+							<div>2011上海佳能博览会</div>
+						</div>
+						<div class="scroll-item">
+							<div class="scroll-time">2012年</div>
+							<div>中日韩三国文化部长会议 </div>
+							<div>第三届国际职业技术教育大会 </div>
+						</div>
+						<div class="scroll-item">
+							<div class="scroll-time">2013年</div>
+							<div>国际大会及会议协会（ICCA）第52届全球年会</div>
+						</div>
+						<div class="scroll-item">
+							<div class="scroll-time">2014年</div>
+							<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
+							<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
+						</div>
+						<div class="scroll-item">
+							<div class="scroll-time">2015年</div>
+							<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
+							<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
+						</div>
+					</div>
 				</div>
-				<!-- <div class="footer-item">
+			</div>
+		</div>
+		<div class="he100"></div>
+		<div class="center">
+			<div class="meeting-facilities">
+				<div class="h-title wow fadeIn" style="text-align: center;" data-wow-delay="0s" data-wow-offset='150'
+				 data-wow-duration='1s'>娱乐设施</div>
+				<div class="he40"></div>
+				<ul class="facilities-item dis-flex jus-between flex-wrap">
+					<li class="wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
+						<img src="images/about/icon-1.png" alt="">
+						<p>桑拿按摩</p>
+					</li>
+					<li class="wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
+						<img src="images/about/icon-2.png" alt="">
+						<p>健身游泳</p>
+					</li>
+					<li class="wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
+						<img src="images/about/icon-3.png" alt="">
+						<p>美容美发</p>
+					</li>
+					<li class="wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
+						<img src="images/about/icon-4.png" alt="">
+						<p>室外网球</p>
+					</li>
+					<li class="wow fadeInUp" data-wow-delay="0.8s" data-wow-offset='150'>
+						<img src="images/about/icon-5.png" alt="">
+						<p>汽车租赁</p>
+					</li>
+					<li class="wow fadeInUp" data-wow-delay="1s" data-wow-offset='150'>
+						<img src="images/about/icon-6.png" alt="">
+						<p>商场代购</p>
+					</li>
+				</ul>
+			</div>
+			<div class="about-facilities">
+				<div class="h-title wow fadeIn" style="text-align: center;" data-wow-offset='150'>周边设施</div>
+				<div class="he40"></div>
+				<div class="wow fadeInUp" data-wow-offset='150'>
+					上海国际会议中心素以举办大型国际会议、商务论坛而蜚声海内外。位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，30个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备，无与伦比的会议场馆与专业化的会务服务都将展示您每次跨越成功的风采。
+				</div>
+			</div>
+			<div class="he40"></div>
+			<div class="about-list dis-flex jus-between">
+				<div class="aboutItem wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
+					<img src="images/about/item1.png" alt="">
+				</div>
+				<div class="aboutItem wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
+					<img src="images/about/item2.png" alt="">
+				</div>
+				<div class="aboutItem wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
+					<img src="images/about/item3.png" alt="">
+				</div>
+				<div class="aboutItem wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
+					<img src="images/about/item4.png" alt="">
+				</div>
+			</div>
+			<div class="he100"></div>
+		</div>
+		<div id="allmap" style="width: 100%;height:500px;">
+
+		</div>
+		<div class="footer">
+			<div class="center">
+				<div class="footer-title">上海国际会议中心欢迎您</div>
+				<div class="he30"></div>
+				<div class="dis-flex jus-between">
+					<div class="footer-item">
+						<div class="footer-name">导航栏</div>
+						<div class="he10"></div>
+						<p>首页</p>
+						<p>会议会展</p>
+						<p>客房信息</p>
+						<p>美食天地</p>
+					</div>
+					<!-- <div class="footer-item">
 					<div class="footer-name">社会</div>
 					<div class="he10"></div>
 					<p>工作机会</p>
@@ -187,83 +190,149 @@
 					<p>隐私条款</p>
 					<p>网站地图</p>
 				</div> -->
-				<div class="footer-item">
-					<div class="footer-name">联系</div>
-					<div class="he10"></div>
-					<p>电话 : (86 21) 5037 0000</p>
-					<p>传真: (86 21) 5037 0999</p>
-					<p>邮箱 : hotel@shicc.net</p>
-					<p>地址: 中国上海浦东滨江大道2727号</p>
+					<div class="footer-item">
+						<div class="footer-name">联系</div>
+						<div class="he10"></div>
+						<p>电话 : (86 21) 5037 0000</p>
+						<p>传真: (86 21) 5037 0999</p>
+						<p>邮箱 : hotel@shicc.net</p>
+						<p>地址: 中国上海浦东滨江大道2727号</p>
+					</div>
+					<div class="footer-item">
+						<div class="footer-name">会议预约</div>
+						<div class="he10"></div>
+						<p>为了您更好的体验，</p>
+						<p>请提前预约</p>
+						<p class="footer-btn" @click="clear()">立即预约</p>
+					</div>
 				</div>
-				<div class="footer-item">
-					<div class="footer-name">会议预约</div>
-					<div class="he10"></div>
-					<p>为了您更好的体验，</p>
-					<p>请提前预约</p>
-					<p class="footer-btn">立即预约</p>
-				</div>
+				<div class="he40"></div>
+				<p class="footer-footer">© 2018 上海国际会议中心 | 东方滨江大酒店. All Rights Reserved 沪ICP备06019427号-1 沪公网安备31011502003373号</p>
 			</div>
-			<div class="he40"></div>
-			<p class="footer-footer">© 2018 上海国际会议中心 | 东方滨江大酒店. All Rights Reserved 沪ICP备06019427号-1 沪公网安备31011502003373号</p>
 		</div>
-	</div>
-	<div class="form-box  jus-contenr items-center">
-		<div class="fromBox">
-			<div class="he80"></div>
-			<div class="fromBox-title">上海国际会议中心欢迎您！</div>
-			<div class="he40"></div>
-			<div class="inp dis-flex jus-between">
-				<div>
-					<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
-					<input type="text">
-					<span>*</span>
+		<div class="form-box  jus-contenr items-center">
+			<div class="fromBox">
+				<div class="he80"></div>
+				<div class="fromBox-title" v-if='show'>上海国际会议中心欢迎您！</div>
+				<div class="he40"></div>
+				<div class="inp dis-flex jus-between" v-if='show'>
+					<div>
+						<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+						<input type="text" v-model="list.name" placeholder="请输入姓名">
+						<span>*</span>
+					</div>
+					<div>
+						<label for="">联系电话：</label>
+						<input type="text" v-model="list.phone" placeholder="请输入联系电话">
+						<span>*</span>
+					</div>
 				</div>
-				<div>
-					<label for="">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
-					<input type="text">
-					<span>*</span>
+				<div class="inp dis-flex jus-between" v-if='show'>
+					<div>
+						<label for="">电子邮箱：</label>
+						<input type="text" v-model="list.email" placeholder="请输入电子邮箱" @blur="upperEmli()">
+						<span>{{emailERR}}</span>
+					</div>
+					<div>
+						<label for="">会议时间：</label>
+						<input type="text" v-model="list.meetingTime" placeholder="格式如：2018-01-01">
+						<span>*</span>
+					</div>
 				</div>
-			</div>
-			<div class="inp dis-flex jus-between">
-				<div>
-					<label for="">联系电话：</label>
-					<input type="text">
-					<span>*</span>
+				<div class="inp dis-flex jus-between" v-if='show'>
+					<div>
+						<label for="">会议人数：</label>
+						<input type="text" v-model="list.number" placeholder="请输入会议人数">
+						<span>*</span>
+					</div>
 				</div>
-				<div>
-					<label for="">电子邮箱：</label>
-					<input type="text">
-					<span>*</span>
+				<div class="tex dis-flex" v-if='show'>
+					<label for="">需求备注：&nbsp;</label>
+					<textarea name="" id="" v-model="list.note" placeholder="需求备注"></textarea>
 				</div>
-			</div>
-			<div class="inp dis-flex jus-between">
-				<div>
-					<label for="">会议时间：</label>
-					<input type="text">
-					<span>*</span>
+				<div style="text-align: center" v-if='!show'>
+					<img src="images/base/over.png" alt="">
+					<div class="he30"></div>
+					<p class="col-3">预约信息已成功提交，<br>
+						我们会在24小时内与您联系</p>
+					<div class="he30"></div>
+
+					<p>如有问题请拨打电话 ：<i class="col-3"> (86 21) 5037 0000</i></p>
 				</div>
-				<div>
-					<label for="">会议人数：</label>
-					<input type="text">
-					<span>*</span>
+				<div class="he50"></div>
+				<div class="box-btn dis-flex jus-end">
+					<div class="box-btnOpen" @click='getData()' v-if='show'>提交表单</div>
+					<div class="box-btnClose" @click='getShow()'>取消</div>
 				</div>
+				<div class="box-img">
+					<img src="images/base/logo.png" alt="">
+				</div>
+				<div class="he20"></div>
 			</div>
-			<div class="tex dis-flex">
-				<label for="">需求备注：&nbsp;</label>
-				<textarea name="" id=""></textarea>
-			</div>
-			<div class="he50"></div>
-			<div class="box-btn dis-flex jus-end">
-				<div class="box-btnOpen">提交表单</div>
-				<div class="box-btnClose">取消</div>
-			</div>
-			<div class="box-img">
-				<img src="images/base/logo.png" alt="">
-			</div>
-			<div class="he20"></div>
 		</div>
+
 	</div>
 </body>
+<script>
+	// 数据加载
+	var app = new Vue({
+		el: '#app',
+		data: {
+			list: {
+				email: "",
+				meetingTime: "",
+				name: "",
+				note: "",
+				number: "",
+				phone: ""
+			},
+			emailERR: '*',
+			show: true
+		},
+		methods: {
+			getShow() {
+				this.show = true
+			},
+			clear() {
+				this.list = {
+					email: "",
+					meetingTime: "",
+					name: "",
+					note: "",
+					number: "",
+					phone: ""
+				}
+			},
+			getData() {
+				var vm = this
+				if (this.list.email != "" && this.list.meetingTime != '' && this.list.name != '' && this.list.number != '' && this.list.phone != '' && this.emailERR == '*') {
+					console.log('123')
+					$.ajax({
+						type: "post", //提交方式 
+						url: "http://10.1.50.137/book/toBook",//路径
+						data: JSON.stringify(vm.list),
+						dataType: 'json',
+						contentType: "application/json;charset=utf-8",
+						success: function (res) {//返回数据根据结果进行相应的处理 
+							if (res.code === 0) {
+								console.log(vm.data)
+								vm.show = false
+							}
+						}
+					});
+				}
+			},
+			upperEmli() {
+				var emli = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+				if (!emli.test(this.list.email)) {
+					this.emailERR = '格式不正确'
+				} else {
+					this.emailERR = '*'
+				}
+			}
+		}
+	})
+</script>
 <script type="text/javascript">
 	$(function () {
 		new WOW().init();
