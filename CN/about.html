@@ -4,14 +4,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>上海国际会议中心</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/media.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<script src="js/wow.js"></script>
-	<script src="js/my_scrollbar.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script src="js/vue.min.js"></script>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animate.min.css">
+	<script src="../js/wow.js"></script>
+	<script src="../js/my_scrollbar.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script src="../js/vue.min.js"></script>
 
 	<script type="text/javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eOZtxesMWUnuHMvNrKq4Ti5rG9CVlVwM"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
@@ -28,14 +28,14 @@
 <body>
 	<div id='app'>
 		<div class="nav dis-flex jus-between items-center">
-			<div class="nav-inp"><img src="images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
-			<div class="nav-link"><img src="images/home/nav.png" alt=""></div>
+			<div class="nav-inp"><img src="../images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
+			<div class="nav-link"><img src="../images/home/nav.png" alt=""></div>
 		</div>
 		<div class="right-nav dis-flex flex-direction jus-contenr items-center">
 			<div class="close">
-				<img src="images/home/close.png" alt="">
+				<img src="../images/home/close.png" alt="">
 			</div>
-			<img src="images/home/logo.png" alt="">
+			<img src="../images/home/logo.png" alt="">
 			<div class="he40"></div>
 			<div class="nav-line"></div>
 			<div class="he50"></div>
@@ -69,41 +69,22 @@
 		</div>
 		<div class="banner">
 			<div class="logo">
-				<img src="images/home/logo.png" alt="">
+				<img src="../images/home/logo.png" alt="">
 			</div>
 		</div>
 		<div class="he100"></div>
 		<div class="history dis-flex">
 			<div class="history-img wow fadeInLeft">
-				<img src="images/about/history.png" alt="">
+				<img src="../images/about/history.png" alt="">
 			</div>
 			<div class="history-list wow fadeInRight">
 				<div class="h-title">历史瞬间</div>
 				<div class="he20"></div>
 				<div class='historybox historybox1' id='wrapper1'>
 					<div class="scroll" id="scrollOne">
-						<div class="scroll-item">
-							<div class="scroll-time">2011年</div>
-							<div>2011上海佳能博览会</div>
-						</div>
-						<div class="scroll-item">
-							<div class="scroll-time">2012年</div>
-							<div>中日韩三国文化部长会议 </div>
-							<div>第三届国际职业技术教育大会 </div>
-						</div>
-						<div class="scroll-item">
-							<div class="scroll-time">2013年</div>
-							<div>国际大会及会议协会（ICCA）第52届全球年会</div>
-						</div>
-						<div class="scroll-item">
-							<div class="scroll-time">2014年</div>
-							<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
-							<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
-						</div>
-						<div class="scroll-item">
-							<div class="scroll-time">2015年</div>
-							<div>亚洲相互协作与信任措施会议第四次峰会欢迎晚宴 </div>
-							<div>上海市市长国际企业家咨询会议第二十六次会议晚宴 </div>
+						<div class="scroll-item" v-for='item in history'>
+							<div class="scroll-time">{{item.years}}</div>
+							<div>{{item.event}}</div>
 						</div>
 					</div>
 				</div>
@@ -117,27 +98,27 @@
 				<div class="he40"></div>
 				<ul class="facilities-item dis-flex jus-between flex-wrap">
 					<li class="wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
-						<img src="images/about/icon-1.png" alt="">
+						<img src="../images/about/icon-1.png" alt="">
 						<p>桑拿按摩</p>
 					</li>
 					<li class="wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
-						<img src="images/about/icon-2.png" alt="">
+						<img src="../images/about/icon-2.png" alt="">
 						<p>健身游泳</p>
 					</li>
 					<li class="wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
-						<img src="images/about/icon-3.png" alt="">
+						<img src="../images/about/icon-3.png" alt="">
 						<p>美容美发</p>
 					</li>
 					<li class="wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
-						<img src="images/about/icon-4.png" alt="">
+						<img src="../images/about/icon-4.png" alt="">
 						<p>室外网球</p>
 					</li>
 					<li class="wow fadeInUp" data-wow-delay="0.8s" data-wow-offset='150'>
-						<img src="images/about/icon-5.png" alt="">
+						<img src="../images/about/icon-5.png" alt="">
 						<p>汽车租赁</p>
 					</li>
 					<li class="wow fadeInUp" data-wow-delay="1s" data-wow-offset='150'>
-						<img src="images/about/icon-6.png" alt="">
+						<img src="../images/about/icon-6.png" alt="">
 						<p>商场代购</p>
 					</li>
 				</ul>
@@ -152,16 +133,16 @@
 			<div class="he40"></div>
 			<div class="about-list dis-flex jus-between">
 				<div class="aboutItem wow fadeInUp" data-wow-delay="0s" data-wow-offset='150'>
-					<img src="images/about/item1.png" alt="">
+					<img src="../images/about/item1.png" alt="">
 				</div>
 				<div class="aboutItem wow fadeInUp" data-wow-delay="0.2s" data-wow-offset='150'>
-					<img src="images/about/item2.png" alt="">
+					<img src="../images/about/item2.png" alt="">
 				</div>
 				<div class="aboutItem wow fadeInUp" data-wow-delay="0.4s" data-wow-offset='150'>
-					<img src="images/about/item3.png" alt="">
+					<img src="../images/about/item3.png" alt="">
 				</div>
 				<div class="aboutItem wow fadeInUp" data-wow-delay="0.6s" data-wow-offset='150'>
-					<img src="images/about/item4.png" alt="">
+					<img src="../images/about/item4.png" alt="">
 				</div>
 			</div>
 			<div class="he100"></div>
@@ -251,7 +232,7 @@
 					<textarea name="" id="" v-model="list.note" placeholder="需求备注"></textarea>
 				</div>
 				<div style="text-align: center" v-if='!show'>
-					<img src="images/base/over.png" alt="">
+					<img src="../images/base/over.png" alt="">
 					<div class="he30"></div>
 					<p class="col-3">预约信息已成功提交，<br>
 						我们会在24小时内与您联系</p>
@@ -265,7 +246,7 @@
 					<div class="box-btnClose" @click='getShow()'>取消</div>
 				</div>
 				<div class="box-img">
-					<img src="images/base/logo.png" alt="">
+					<img src="../images/base/logo.png" alt="">
 				</div>
 				<div class="he20"></div>
 			</div>
@@ -287,9 +268,28 @@
 				phone: ""
 			},
 			emailERR: '*',
-			show: true
+			show: true,
+			history: []
+		},
+		created () {
+			this.Data()
 		},
 		methods: {
+			Data() {
+				var vm = this
+				$.ajax({
+					type: "get", //提交方式 
+					url: "http://10.1.50.137/about/getHistory",//路径
+					dataType: 'json',
+					contentType: "application/json;charset=utf-8",
+					success: function (res) {//返回数据根据结果进行相应的处理 
+						if (res.code === 0) {
+							console.log(res.data)
+							vm.history = res.data
+						}
+					}
+				});
+			},
 			getShow() {
 				this.show = true
 			},

@@ -4,27 +4,26 @@
 <head>
   <meta charset="utf-8">
   <title>上海国际会议中心</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/media.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <script src="js/wow.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="js/vue.min.js"></script>
-
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <script src="../js/wow.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script src="../js/vue.min.js"></script>
 </head>
 
 <body>
   <div id='app'>
     <div class="nav dis-flex jus-between items-center">
-      <div class="nav-inp"><img src="images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
-      <div class="nav-link"><img src="images/home/nav.png" alt=""></div>
+      <div class="nav-inp"><img src="../images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
+      <div class="nav-link"><img src="../images/home/nav.png" alt=""></div>
     </div>
     <div class="right-nav dis-flex flex-direction jus-contenr items-center">
       <div class="close">
-        <img src="images/home/close.png" alt="">
+        <img src="../images/home/close.png" alt="">
       </div>
-      <img src="images/home/logo.png" alt="">
+      <img src="../images/home/logo.png" alt="">
       <div class="he40"></div>
       <div class="nav-line"></div>
       <div class="he50"></div>
@@ -56,58 +55,50 @@
         沪ICP备06019427号-1 沪公网安备31011502003373号
       </div>
     </div>
-
-    <div class="he100"></div>
-    <div class="center">
-      <div class="roomdetails-img wow fadeInUp" data-wow-offset='150' data-wow-delay="0.4s">
-        <img :src="data.guestRoom.banner" alt="">
-        <div class="roomdetails-QRcode">
-          <div class="he50"></div>
-          <div class="QRcode">{{data.guestRoom.name}}</div>
-          <div class="QRcode-QR"></div>
-          <p>在线预约<br>
-            扫一扫关注微信公众平台</p>
-          <div class="he50"></div>
-          <div class="QR-iph">电话预约：(86 21) 5037 0000</div>
-        </div>
-      </div>
-      <div class="he100"></div>
-      <div class="meetingdetails">
-        <div class="meetingdetails-title">
-          <div class="meetingdetails-left wow fadeInUp" data-wow-delay="0.4s">
-            <div class="h-title col-3">{{data.guestRoom.name}}</div>
-            <div class="he10"></div>
-            <div class="meering-line back-1"></div>
-            <div class="he40"></div>
-            <p v-html="data.guestRoom.detail"></p>
-          </div>
-        </div>
-      </div>
-      <div class="he100"></div>
-    </div>.
-    <div class="center">
-      <div class="room-list">
-        <img :src="data.guestRoom.detailPic" alt="">
+    <div class="banner">
+      <div class="logo">
+        <img src="../images/home/logo.png" alt="">
       </div>
     </div>
     <div class="he100"></div>
     <div class="center">
-      <div class="meetingdetails-title">
-        <div class="meetingdetails-left">
-          <div class="h-title col-3">其他客房信息</div>
-          <div class="he10"></div>
-          <div class="meering-line back-1"></div>
+      <div class="meetingdetails">
+        <div class="meetingdetails-title">
+          <div class="meetingdetails-left">
+            <div class="h-title col-3 wow fadeInUp" data-wow-delay="0">{{num}}楼会议室平面图</div>
+            <div class="he10"></div>
+            <div class="meering-line back-1 wow fadeInUp" data-wow-delay="0"></div>
+          </div>
+          <!-- <div class="meetingdetails-right">
+          <img src="" alt=""> 高清图下载
+        </div> -->
         </div>
-      </div>
-      <div class="he40"></div>
-      <div class="otherData dis-flex flex-wrap">
-        <div class="otherItem wow fadeInUp" data-wow-offset='150' data-wow-delay="0" v-for="item in data.otherguestRooms">
-          <a :href="getGoodsHref(item.id)">
-            <img :src="item.thumbnail" alt="">
-            <p class="he40"></p>
-            <p class="otherItem-name">{{item.name}}</p>
-            <p>{{item.summary}}</p>
-          </a>
+        <div class="he40"></div>
+        <div class="meetingdetails-img wow fadeInUp" data-wow-offset='150'>
+          <img :src="data.floor.diagram" alt="">
+        </div>
+        <div class="he40"></div>
+        <div class="meetingdetails-img wow fadeInUp" data-wow-offset='150'>
+          <img :src="data.floor.datagram" alt="">
+        </div>
+        <div class="he100"></div>
+        <div class="meetingdetails-title">
+          <div class="meetingdetails-left">
+            <div class="h-title col-3 wow fadeInUp" data-wow-delay="0">{{num}}楼会议厅</div>
+            <div class="he10"></div>
+            <div class="meering-line back-1 wow fadeInUp" data-wow-delay="0"></div>
+          </div>
+        </div>
+        <div class="he40"></div>
+        <div class="otherData dis-flex flex-wrap">
+          <div class="otherItem wow fadeInUp" data-wow-offset='150' data-wow-delay="0" v-for="item in data.meetingRooms">
+            <a :href="getGoodsHref(item.id)">
+              <img :src="item.thumbnail" alt="">
+              <p class="he40"></p>
+              <p class="otherItem-name">{{item.name}}</p>
+              <p>{{item.summary}}</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -146,7 +137,7 @@
             <div class="he10"></div>
             <p>为了您更好的体验，</p>
             <p>请提前预约</p>
-            <p class="footer-btn" @click="clear()">立即预约</p>
+						<p class="footer-btn" @click="clear()">立即预约</p>
           </div>
         </div>
         <div class="he40"></div>
@@ -194,7 +185,7 @@
           <textarea name="" id="" v-model="list.note" placeholder="需求备注"></textarea>
         </div>
         <div style="text-align: center" v-if='!show'>
-          <img src="images/base/over.png" alt="">
+          <img src="../images/base/over.png" alt="">
           <div class="he30"></div>
           <p class="col-3">预约信息已成功提交，<br>
             我们会在24小时内与您联系</p>
@@ -208,7 +199,7 @@
           <div class="box-btnClose" @click='getShow()'>取消</div>
         </div>
         <div class="box-img">
-          <img src="images/base/logo.png" alt="">
+          <img src="../images/base/logo.png" alt="">
         </div>
         <div class="he20"></div>
       </div>
@@ -230,6 +221,18 @@
     $('.box-btnClose').click(function () {
       $('.form-box').removeClass('dis-flex')
     })
+    $.ajax({
+      url: "http://10.1.50.137/banner/getBanner?type=1",
+      async: false,
+      type: "get",
+      dataType: "json",
+      success: function (res) {
+        if (res.code == 0) {
+          console.log(res.data.url)
+          $('.banner').css({ 'background': `url(${res.data.url}) no-repeat`, 'background-size': 'cover', 'background-position': '50% 50%' });
+        }
+      }
+    });
   });
 </script>
 <script>
@@ -238,14 +241,13 @@
     el: '#app',
     data: {
       data: {
-        guestRoom: {
-          banner: '',
-          detailPic: '',
-          name: '',
-          detail: '',
+        floor: {
+          diagram: "",
+          datagram: '',
         },
-        otherguestRooms: []
+        meetingRooms: []
       },
+      num: window.location.href.split('=')[1],
       list: {
         email: "",
         meetingTime: "",
@@ -262,11 +264,13 @@
     },
     methods: {
       Data() {
-        console.log('123')
         var vm = this
         $.ajax({
           type: "get", //提交方式 
-          url: "http://10.1.50.137/room/getGuestRoom?id=" + window.location.href.split('=')[1],//路径 
+          url: "http://10.1.50.137/meeting/getFloor",//路径 
+          data: {
+            'number': window.location.href.split('=')[1]
+          },
           success: function (res) {//返回数据根据结果进行相应的处理 
             if (res.code === 0) {
               vm.data = res.data
@@ -276,8 +280,7 @@
         });
       },
       getGoodsHref(val) {
-        console.log(val)
-        return 'http://127.0.0.1:5500/roomdetails.html?id=' + val
+        return 'http://127.0.0.1:5500/halldetails.html?id=' + val + '&number=' + this.num
       },
       getShow() {
         this.show = true
