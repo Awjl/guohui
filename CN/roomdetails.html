@@ -266,7 +266,7 @@
         var vm = this
         $.ajax({
           type: "get", //提交方式 
-          url: "http://10.1.50.137/room/getGuestRoom?id=" + window.location.href.split('=')[1],//路径 
+          url: "http://10.1.50.137/room/getGuestRoom?isEnglish=2&id=" + window.location.href.split('=')[1],//路径 
           success: function (res) {//返回数据根据结果进行相应的处理 
             if (res.code === 0) {
               vm.data = res.data
@@ -277,7 +277,7 @@
       },
       getGoodsHref(val) {
         console.log(val)
-        return 'http://127.0.0.1:5500/roomdetails.html?id=' + val
+        return 'http://127.0.0.1:5500/CN/roomdetails.html?id=' + val
       },
       getShow() {
         this.show = true

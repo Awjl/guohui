@@ -222,7 +222,7 @@
       $('.form-box').removeClass('dis-flex')
     })
     $.ajax({
-      url: "http://10.1.50.137/banner/getBanner?type=1",
+      url: "http://10.1.50.137/banner/getBanner?type=1&isEnglish=2",
       async: false,
       type: "get",
       dataType: "json",
@@ -267,7 +267,7 @@
         var vm = this
         $.ajax({
           type: "get", //提交方式 
-          url: "http://10.1.50.137/meeting/getFloor",//路径 
+          url: "http://10.1.50.137/meeting/getFloor?isEnglish=2",//路径 
           data: {
             'number': window.location.href.split('=')[1]
           },
@@ -280,7 +280,7 @@
         });
       },
       getGoodsHref(val) {
-        return 'http://127.0.0.1:5500/halldetails.html?id=' + val + '&number=' + this.num
+        return 'http://127.0.0.1:5500/CN/halldetails.html?id=' + val + '&number=' + this.num
       },
       getShow() {
         this.show = true

@@ -16,13 +16,6 @@
 	<script type="text/javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eOZtxesMWUnuHMvNrKq4Ti5rG9CVlVwM"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
-	<style>
-		.banner {
-			background: url(images/about/bg.png) no-repeat;
-			background-size: cover;
-			background-position: 50% 0;	
-		}
-	</style>
 </head>
 
 <body>
@@ -279,7 +272,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://10.1.50.137/about/getHistory",//路径
+					url: "http://10.1.50.137/about/getHistory?isEnglish=2",//路径
 					dataType: 'json',
 					contentType: "application/json;charset=utf-8",
 					success: function (res) {//返回数据根据结果进行相应的处理 
@@ -357,7 +350,7 @@
 			$('.form-box').removeClass('dis-flex')
 		})
 		$.ajax({
-			url: "http://10.1.50.137/banner/getBanner?type=1",
+			url: "http://10.1.50.137/banner/getBanner?type=1&isEnglish=2",
 			async: false,
 			type: "get",
 			dataType: "json",
@@ -384,7 +377,7 @@
 
 
 	var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-		'<img src="images/about/logobg.jpg" alt="" style="zoom:1;float:right;overflow:hidden;height:100px;margin-left:3px;"/>' +
+		'<img src="../images/about/logobg.jpg" alt="" style="zoom:1;float:right;overflow:hidden;height:100px;margin-left:3px;"/>' +
 		'地址：滨江大道2727号<br/>电话：(021)50370000<br/>简介：上海国际会议中心总建筑面积达11万平方米，拥有现代化的会议场馆：有4300平方米的多功能厅和3600平方米的新闻中心各1个，可容纳50-800人的会议厅三十余个；豪华宾馆客房，有总统套房、商务套房、标准间近270套；还有高级餐饮设施、舒适的休闲场所和600余个车位。' +
 		'</div>';
 

@@ -15,7 +15,6 @@
 
 <body>
 	<div id='app'>
-
 		<div class="nav dis-flex jus-between items-center">
 			<div class="nav-inp"><img src="../images/home/nav-iph.png" alt="">立即预订 (86 21) 5037 0000</div>
 			<div class="nav-link"><img src="../images/home/nav.png" alt=""></div>
@@ -68,9 +67,9 @@
 			<div class="foot-line back-1 wow fadeInUp" data-wow-offset='50'></div>
 			<div class="he40"></div>
 			<div class="foot-nav dis-flex wow fadeInUp" data-wow-offset='100'>
-				<span class="foot-active" @click='getData(1)'>宴会厅</span>
-				<span @click='getData(2)'>包&nbsp;&nbsp;&nbsp;&nbsp;房</span>
-				<span @click='getData(3)'>餐&nbsp;&nbsp;&nbsp;&nbsp;厅</span>
+				<span class="foot-active" @click='Data(1)'>宴会厅</span>
+				<span @click='Data(2)'>包&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+				<span @click='Data(3)'>餐&nbsp;&nbsp;&nbsp;&nbsp;厅</span>
 			</div>
 			<div class="he40"></div>
 			<div class="foot-list">
@@ -253,7 +252,7 @@
 			$(this).addClass('foot-active')
 		})
 		$.ajax({
-			url: "http://10.1.50.137/banner/getBanner?type=1",
+			url: "http://10.1.50.137/banner/getBanner?type=1&isEnglish=2",
 			async: false,
 			type: "get",
 			dataType: "json",
@@ -291,7 +290,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://10.1.50.137/food/getFoodInfo",//路径 
+					url: "http://10.1.50.137/food/getFoodInfo?isEnglish=2",//路径 
 					data: {
 						'type': type
 					},

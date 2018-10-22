@@ -552,7 +552,9 @@
   width: 150px;
   height: 150px;
   margin: 20px auto 10px;
-  background: #ddd;
+  background: url(../images/erweiCode.png) no-repeat;
+  background-size: cover;
+
 }
 
 .roomdetails-QRcode>p {
@@ -569,7 +571,8 @@
 .foot-QRcode {
   width: 100px;
   height: 100px;
-  background: #ddd;
+  background: url(../images/erweiCode.png) no-repeat;
+  background-size: cover;
 }
 
 .foot-QR {
