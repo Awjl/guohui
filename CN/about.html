@@ -272,7 +272,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://10.1.50.137/about/getHistory?isEnglish=2",//路径
+					url: "http://47.96.165.248/about/getHistory?isEnglish=2",//路径
 					dataType: 'json',
 					contentType: "application/json;charset=utf-8",
 					success: function (res) {//返回数据根据结果进行相应的处理 
@@ -302,7 +302,7 @@
 					console.log('123')
 					$.ajax({
 						type: "post", //提交方式 
-						url: "http://10.1.50.137/book/toBook",//路径
+						url: "http://47.96.165.248/book/toBook",//路径
 						data: JSON.stringify(vm.list),
 						dataType: 'json',
 						contentType: "application/json;charset=utf-8",
@@ -350,7 +350,7 @@
 			$('.form-box').removeClass('dis-flex')
 		})
 		$.ajax({
-			url: "http://10.1.50.137/banner/getBanner?type=1&isEnglish=2",
+			url: "http://47.96.165.248/banner/getBanner?type=4&isEnglish=2",
 			async: false,
 			type: "get",
 			dataType: "json",

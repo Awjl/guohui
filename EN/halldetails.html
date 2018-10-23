@@ -44,7 +44,7 @@
             <li><a href="roomdetails.html?key=2"> Superior Riverview Room</a></li>
             <li><a href="roomdetails.html?key=3">Premier Riverview Room</a></li>
             <li><a href="roomdetails.html?key=4">Executive Riverview Room</a></li>
-            <li><a href="roomdetails.html?key=5">商务江景房</a></li>
+            <li><a href="roomdetails.html?key=5">Business River View Room</a></li>
             <li><a href="roomdetails.html?key=6"> Executive VIP/Business Suites</a></li>
             <li><a href="roomdetails.html?key=7">Presidential Suite</a></li>
           </ul>
@@ -76,7 +76,7 @@
             {{data.meetingRoom.detail}}
           </div>
           <div class="hall-btn dis-flex jus-contenr items-center">
-            <div class="hotel-btn back-1 col-1 wow bounceInRight" data-wow-offset='150' data-wow-delay="0.4s">预定会议</div>
+            <div class="hotel-btn back-1 col-1 wow bounceInRight" data-wow-offset='150' data-wow-delay="0.4s">Reservation</div>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
     <div class="center">
       <div class="meetingdetails-title">
         <div class="meetingdetails-left">
-          <div class="h-title col-3">{{window.location.href.charAt(window.location.href.length - 1)}}楼其他会议厅</div>
+          <div class="h-title col-3">Other meeting rooms on the {{window.location.href.charAt(window.location.href.length - 1)}} floor</div>
           <div class="he10"></div>
           <div class="meering-line back-1"></div>
         </div>
@@ -262,7 +262,7 @@
         var vm = this
         $.ajax({
           type: "get", //提交方式 
-          url: "http://10.1.50.137/meeting/getMeetingRoom?" + window.location.href.split('?')[1],//路径 
+          url: "http://10.1.50.137/meeting/getMeetingRoom?isEnglish=1&" + window.location.href.split('?')[1],//路径 
           success: function (res) {//返回数据根据结果进行相应的处理 
             if (res.code === 0) {
               vm.data = res.data
@@ -273,7 +273,7 @@
       },
       getGoodsHref(val) {
         console.log(val)
-        return 'http://127.0.0.1:5500/halldetails.html?id=' + val + '&number=' + this.num
+        return 'http://127.0.0.1:5500/官网/EN/halldetails.html?id=' + val + '&number=' + this.num
       },
       getShow() {
         this.show = true

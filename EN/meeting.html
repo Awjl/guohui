@@ -43,7 +43,7 @@
 						<li><a href="roomdetails.html?key=2"> Superior Riverview Room</a></li>
 						<li><a href="roomdetails.html?key=3">Premier Riverview Room</a></li>
 						<li><a href="roomdetails.html?key=4">Executive Riverview Room</a></li>
-						<li><a href="roomdetails.html?key=5">商务江景房</a></li>
+						<li><a href="roomdetails.html?key=5">Business River View Room</a></li>
 						<li><a href="roomdetails.html?key=6"> Executive VIP/Business Suites</a></li>
 						<li><a href="roomdetails.html?key=7">Presidential Suite</a></li>
 					</ul>
@@ -334,7 +334,7 @@
 			$('.form-box').removeClass('dis-flex')
 		})
 		$.ajax({
-			url: "http://10.1.50.137/banner/getBanner?type=1&isEnglish=1",
+			url: "http://47.96.165.248/banner/getBanner?type=1&isEnglish=1",
 			async: false,
 			type: "get",
 			dataType: "json",
@@ -373,7 +373,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://10.1.50.137/meeting/getPastMeeting?isEnglish=1",//路径 
+					url: "http://47.96.165.248/meeting/getPastMeeting?isEnglish=1",//路径 
 					success: function (res) {//返回数据根据结果进行相应的处理 
 						if (res.code === 0) {
 							vm.data = res.data
@@ -401,7 +401,7 @@
 					console.log('123')
 					$.ajax({
 						type: "post", //提交方式 
-						url: "http://10.1.50.137/book/toBook",//路径
+						url: "http://47.96.165.248/book/toBook",//路径
 						data: JSON.stringify(vm.list),
 						dataType: 'json',
 						contentType: "application/json;charset=utf-8",

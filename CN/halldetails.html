@@ -274,7 +274,7 @@
       },
       getGoodsHref(val) {
         console.log(val)
-        return 'http://127.0.0.1:5500/CN/halldetails.html?id=' + val + '&number=' + this.num
+        return 'http://127.0.0.1:5500/官网/CN/halldetails.html?id=' + val + '&number=' + this.num
       },
       getShow() {
         this.show = true
@@ -295,7 +295,7 @@
           console.log('123')
           $.ajax({
             type: "post", //提交方式 
-            url: "http://10.1.50.137/book/toBook",//路径
+            url: "http://47.96.165.248/book/toBook",//路径
             data: JSON.stringify(vm.list),
             dataType: 'json',
             contentType: "application/json;charset=utf-8",
