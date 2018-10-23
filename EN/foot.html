@@ -69,9 +69,9 @@
 			<div class="foot-line back-1 wow fadeInUp" data-wow-offset='50'></div>
 			<div class="he40"></div>
 			<div class="foot-nav dis-flex wow fadeInUp" data-wow-offset='100'>
-				<span class="foot-active" @click='getData(1)'>Banquet Hall</span>
-				<span @click='getData(2)'>Private Room</span>
-				<span @click='getData(3)'>DINING</span>
+				<span class="foot-active" @click='Data(1)'>Banquet Hall</span>
+				<span @click='Data(2)'>Private Room</span>
+				<span @click='Data(3)'>DINING</span>
 			</div>
 			<div class="he40"></div>
 			<div class="foot-list">
@@ -83,8 +83,7 @@
 						<div class="he40"></div>
 						<div class="footimg-title">{{item.name}}</div>
 						<div class="he20"></div>
-						<div>
-							{{item.summary}}
+						<div v-html='item.summary'>
 						</div>
 						<div class="he30"></div>
 						<div class=" dis-flex items-end">
@@ -295,7 +294,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://47.96.165.248/food/getFoodInfo?isEnglish=1",//路径 
+					url: "http://10.1.50.137/food/getFoodInfo?isEnglish=1",//路径 
 					data: {
 						'type': type
 					},

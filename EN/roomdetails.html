@@ -70,7 +70,7 @@
             Scan the WeChat public platform
           </p>
           <div class="he50"></div>
-          <div class="QR-iph">Phone Appointment:(86 21) 5037 0000</div> 
+          <div class="QR-iph">Phone Appointment:(86 21) 5037 0000</div>
         </div>
       </div>
       <div class="he100"></div>
@@ -88,8 +88,8 @@
       <div class="he100"></div>
     </div>
     <div class="center">
-      <div class="room-list">
-        <img :src="data.guestRoom.detailPic" alt="">
+      <div class="room-list" v-for="item in data.guestRoom.detailPic.split(',')" style="margin-bottom:20px;">
+        <img :src="item" alt="">
       </div>
     </div>
     <div class="he100"></div>
@@ -248,6 +248,7 @@
           detailPic: '',
           name: '',
           detail: '',
+          detailPic: ''
         },
         otherguestRooms: []
       },
