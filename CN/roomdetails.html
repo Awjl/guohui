@@ -41,12 +41,12 @@
         <li><a href="guestRoom.html">客房信息</a>
           <ul class="nav-item nav-itemtwo">
             <li><a href="roomdetails.html?key=1">高级园景房</a></li>
-            <li><a href="roomdetails.html?key=2">高级江景房</a></li>
-            <li><a href="roomdetails.html?key=3">豪华江景房</a></li>
-            <li><a href="roomdetails.html?key=4">行政江景房</a></li>
-            <li><a href="roomdetails.html?key=5">商务江景房</a></li>
-            <li><a href="roomdetails.html?key=6">行政贵宾/商务套房</a></li>
-            <li><a href="roomdetails.html?key=7">总统套房</a></li>
+            <li><a href="roomdetails.html?key=3">高级江景房</a></li>
+            <li><a href="roomdetails.html?key=5">豪华江景房</a></li>
+            <li><a href="roomdetails.html?key=7">行政江景房</a></li>
+            <li><a href="roomdetails.html?key=9">商务江景房</a></li>
+            <li><a href="roomdetails.html?key=11">行政贵宾/商务套房</a></li>
+            <li><a href="roomdetails.html?key=13">总统套房</a></li>
           </ul>
         </li>
         <li><a href="foot.html">美食天地</a></li>
@@ -266,7 +266,7 @@
         var vm = this
         $.ajax({
           type: "get", //提交方式 
-          url: "http://47.96.165.248/room/getGuestRoom?isEnglish=2&id=" + window.location.href.split('=')[1],//路径 
+          url: "http://10.1.50.137/room/getGuestRoom?isEnglish=2&id=" + window.location.href.split('=')[1],//路径 
           success: function (res) {//返回数据根据结果进行相应的处理 
             if (res.code === 0) {
               vm.data = res.data
