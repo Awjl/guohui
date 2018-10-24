@@ -481,7 +481,7 @@
   width: 600px;
   height: 370px;
   padding: 0;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .historybox p {

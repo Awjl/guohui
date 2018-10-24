@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="../css/media.css">
 	<link rel="stylesheet" href="../css/animate.min.css">
 	<script src="../js/wow.js"></script>
-	<script src="../js/my_scrollbar.js"></script>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script src="../js/vue.min.js"></script>
+	<!-- <script src="../js/my_scrollbar.js"></script> -->
 
 	<script type="text/javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eOZtxesMWUnuHMvNrKq4Ti5rG9CVlVwM"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
@@ -74,8 +74,8 @@
 			<div class="history-list wow fadeInRight">
 				<div class="h-title">历史瞬间</div>
 				<div class="he20"></div>
-				<div class='historybox historybox1' id='wrapper1'>
-					<div class="scroll" id="scrollOne">
+				<div class='historybox historybox1'>
+					<div class="scroll">
 						<div class="scroll-item" v-for='item in history'>
 							<div class="scroll-time">{{item.years}}</div>
 							<div>{{item.event}}</div>
@@ -273,7 +273,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://47.96.165.248/about/getHistory?isEnglish=2",//路径
+					url: "/about/getHistory?isEnglish=2",//路径
 					dataType: 'json',
 					contentType: "application/json;charset=utf-8",
 					success: function (res) {//返回数据根据结果进行相应的处理 
@@ -303,7 +303,7 @@
 					console.log('123')
 					$.ajax({
 						type: "post", //提交方式 
-						url: "http://47.96.165.248/book/toBook",//路径
+						url: "/book/toBook",//路径
 						data: JSON.stringify(vm.list),
 						dataType: 'json',
 						contentType: "application/json;charset=utf-8",
@@ -330,14 +330,6 @@
 <script type="text/javascript">
 	$(function () {
 		new WOW().init();
-		var oMyBar1 = new MyScrollBar({
-			selId: 'wrapper1',
-			bgColor: 'rgba(50, 50, 50, 0.2)',
-			barColor: '#59C2FA',
-			enterColor: '#056FD8',
-			enterShow: false,
-			borderRadius: 10,
-		});
 		$('.nav-link').click(function () {
 			$('.right-nav').css('right', '0')
 		})
@@ -351,7 +343,7 @@
 			$('.form-box').removeClass('dis-flex')
 		})
 		$.ajax({
-			url: "http://47.96.165.248/banner/getBanner?type=4&isEnglish=2",
+			url: "/banner/getBanner?type=4&isEnglish=2",
 			async: false,
 			type: "get",
 			dataType: "json",

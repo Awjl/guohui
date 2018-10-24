@@ -252,7 +252,7 @@
 			$(this).addClass('foot-active')
 		})
 		$.ajax({
-			url: "http://47.96.165.248/banner/getBanner?type=3&isEnglish=2",
+			url: "/banner/getBanner?type=3&isEnglish=2",
 			async: false,
 			type: "get",
 			dataType: "json",
@@ -290,7 +290,7 @@
 				var vm = this
 				$.ajax({
 					type: "get", //提交方式 
-					url: "http://47.96.165.248/food/getFoodInfo?isEnglish=2",//路径 
+					url: "/food/getFoodInfo?isEnglish=2",//路径 
 					data: {
 						'type': type
 					},
@@ -321,7 +321,7 @@
 					console.log('123')
 					$.ajax({
 						type: "post", //提交方式 
-						url: "http://47.96.165.248/book/toBook",//路径
+						url: "/book/toBook",//路径
 						data: JSON.stringify(vm.list),
 						dataType: 'json',
 						contentType: "application/json;charset=utf-8",
